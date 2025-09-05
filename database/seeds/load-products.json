@@ -1,0 +1,40 @@
+{
+  "serverless-products-dev": [
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {"S": "1"},
+          "name": {"S": "Laptop"},
+          "price": {"N": "999.99"},
+          "description": {"S": "High-performance laptop"},
+          "category": {"S": "Electronics"},
+          "stock": {"N": "10"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {"S": "2"},
+          "name": {"S": "Wireless Mouse"},
+          "price": {"N": "29.99"},
+          "description": {"S": "Ergonomic wireless mouse"},
+          "category": {"S": "Electronics"},
+          "stock": {"N": "50"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "id": {"S": "3"},
+          "name": {"S": "USB-C Cable"},
+          "price": {"N": "15.99"},
+          "description": {"S": "Fast charging cable"},
+          "category": {"S": "Accessories"},
+          "stock": {"N": "100"}
+        }
+      }
+    }
+  ]
+}

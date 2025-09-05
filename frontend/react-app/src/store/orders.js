@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import { toast } from "react-toastify";
 
 const initialState = {
   orders: [],
@@ -25,24 +26,8 @@ const useOrders = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const getOrders = async (user_id) => {
-    const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/get-orders/${user_id}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "cors",
-        credentials: "include",
-      }
-    );
-
-    const data = await response.json();
-    if (data.error) {
-      return data.error;
-    }
-    dispatch({ type: actions.GET_ORDERS, orders: data.orders });
-    return data.orders;
+    toast.info("Orders not implemented in demo");
+    return [];
   };
 
   const setOrderToBeCanceled = (order_id) => {
@@ -50,29 +35,8 @@ const useOrders = () => {
   };
 
   const cancelOrder = async (order_id) => {
-    const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/cancel-order`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "cors",
-        credentials: "include",
-        body: JSON.stringify({ order_id }),
-      }
-    );
-
-    const data = await response.json();
-
-    if (data.error) {
-      return data.error;
-    }
-
-    dispatch({ type: actions.GET_ORDER_TO_BE_CANCELED, order_id: null });
-    getOrders(data.user_id);
-
-    return data;
+    toast.info("Order cancellation not implemented in demo");
+    return { error: "Not implemented" };
   };
 
   return { state, getOrders, setOrderToBeCanceled, cancelOrder };

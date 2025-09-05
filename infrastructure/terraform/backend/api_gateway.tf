@@ -68,7 +68,12 @@ resource "aws_api_gateway_deployment" "api_deployment" {
     aws_api_gateway_method.get_product,
     aws_api_gateway_method.create_product,
     aws_api_gateway_method.update_product,
-    aws_api_gateway_method.delete_product
+    aws_api_gateway_method.delete_product,
+    aws_api_gateway_integration.get_products_integration,
+    aws_api_gateway_integration.get_product_integration,
+    aws_api_gateway_integration.create_product_integration,
+    aws_api_gateway_integration.update_product_integration,
+    aws_api_gateway_integration.delete_product_integration
   ]
 }
 

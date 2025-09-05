@@ -156,7 +156,7 @@ const useStore = () => {
     dispatch({ type: actions.CLEAR_CART });
   };
   const getProducts = () => {
-    fetch(`${import.meta.env.VITE_API_URL}/get-products`)
+    fetch(`${import.meta.env.VITE_API_URL}/products`)
       .then(async (response) => {
         const data = await response.json();
         let modifiedData = data.map((product) => {
@@ -185,39 +185,12 @@ const useStore = () => {
     dispatch({ type: actions.REDUCE_QUANTITY, product });
   };
 
-  const confirmOrder = async (order) => {
-    let payload = {
-      items: state.cart,
-      totalItemCount: state.cartQuantity,
-      delivery_type: order.DeliveryType,
-      delivery_type_cost: order.DeliveryTypeCost,
-      cost_before_delivery_rate: state.cartTotal,
-      cost_after_delivery_rate: order.costAfterDelieveryRate,
-      promo_code: order.promo_code || "",
-      contact_number: order.phoneNumber,
-      user_id: order.user_id,
-    };
-    const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/place-order`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "cors",
-        credentials: "include",
-        body: JSON.stringify(payload),
-      }
-    );
-    const data = await response.json();
-    if (data.error) {
-      toast.error("You must be logged in to place an order");
-      return { showRegisterLogin: true };
-    }
-    toast.success(data.message);
-    clearCart();
-    return true;
-  };
+const confirmOrder = async (order) => {
+  // Demo mode - no order backend
+  toast.success("Order functionality not implemented in demo");
+  clearCart();
+  return true;
+};
 
   return {
     state,
