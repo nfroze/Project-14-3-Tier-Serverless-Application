@@ -14,3 +14,13 @@ variable "lambda_function_arns" {
     delete  = string
   })
 }
+
+variable "dynamodb_table_arn" {
+  description = "ARN of the DynamoDB table"
+  type        = string
+}
+
+variable "api_gateway_execution_arn" {
+  description = "Execution ARN of the API Gateway"
+  type        = string
+}

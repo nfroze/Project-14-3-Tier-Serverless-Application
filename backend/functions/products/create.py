@@ -1,11 +1,13 @@
 import json
 import boto3
+import os
 import uuid
 
 dynamodb = boto3.resource('dynamodb')
 
 def handler(event, context):
-    table = dynamodb.Table('serverless-products-dev')
+    table_name = os.environ['TABLE_NAME']
+    table = dynamodb.Table(table_name)
     data = json.loads(event['body'])
     
     item = {

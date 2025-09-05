@@ -1,5 +1,6 @@
 import json
 import boto3
+import os
 from decimal import Decimal
 
 dynamodb = boto3.resource('dynamodb')
@@ -10,7 +11,8 @@ def decimal_default(obj):
     raise TypeError
 
 def handler(event, context):
-    table = dynamodb.Table('serverless-products-dev')
+    table_name = os.environ['TABLE_NAME']
+    table = dynamodb.Table(table_name)
     product_id = event['pathParameters']['id']
     data = json.loads(event['body'])
     
