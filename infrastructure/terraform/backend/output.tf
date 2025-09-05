@@ -1,3 +1,17 @@
 output "api_url" {
   value = "${aws_api_gateway_stage.api_stage.invoke_url}/products"
 }
+
+output "api_gateway_execution_arn" {
+  value = aws_api_gateway_rest_api.products_api.execution_arn
+}
+
+output "lambda_function_arns" {
+  value = {
+    get_all = aws_lambda_function.get_all_products.invoke_arn
+    get_one = aws_lambda_function.get_one_product.invoke_arn
+    create  = aws_lambda_function.create_product.invoke_arn
+    update  = aws_lambda_function.update_product.invoke_arn
+    delete  = aws_lambda_function.delete_product.invoke_arn
+  }
+}
