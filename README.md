@@ -8,11 +8,18 @@ AWS Lambda • API Gateway • DynamoDB • S3 • CloudFront • React • Terr
 
 ## Screenshots
 
-- [Application frontend](screenshots/frontend-products.png)
-- [API Gateway endpoints](screenshots/api-gateway-console.png)
-- [Lambda functions](screenshots/lambda-functions.png)
-- [DynamoDB table](screenshots/dynamodb-table.png)
-- [CloudFront distribution](screenshots/cloudfront-distribution.png)
-- [S3 bucket hosting](screenshots/s3-bucket.png)
-- [Terraform deployment](screenshots/terraform-apply.png)
-- [Git workflow](screenshots/feature-branches.png)
+![Application frontend](screenshots/frontend-products.png)
+
+![API Gateway endpoints](screenshots/api-gateway-console.png)
+
+![Lambda functions](screenshots/lambda-functions.png)
+
+![DynamoDB table](screenshots/dynamodb-table.png)
+
+![CloudFront distribution](screenshots/cloudfront-distribution.png)
+
+![S3 bucket hosting](screenshots/s3-bucket.png)
+
+![Terraform deployment](screenshots/terraform-apply.png)
+
+![Git workflow](screenshots/feature-branches.png)
